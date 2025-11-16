@@ -40,3 +40,11 @@ npx serve -s . -l 8000
 - Les comportements combinés donnent un mouvement naturel aux ennemis.
 - Le code est volontairement en style "global" (classes non-module) pour coller au format utilisé en TP.
 
+## Screenshots du jeu
+
+### Capture de jeu
+![Capture du jeu](assets/Screenshot.jpg)
+
+### Game Over
+![Écran Game Over](assets/game_over.jpg)
+
