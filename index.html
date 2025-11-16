@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VAMPIRE SURVIVORS</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      position: relative; 
+    }
+    
+    #replay-button {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 80px); 
+      padding: 15px 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #dc3545;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 100;
+    }
+    
+    #replay-button:hover {
+      background-color: #c82333;
+    }
+    
+    canvas {
+      z-index: 1;
+    }
+    
+  </style>
+</head>
+<body>
+  <main></main> 
+
+  <button id="replay-button">REPLAY</button>
+
+ <script src="vehicle.js"></script>
+  <script src="Obstacle.js"></script>
+  <script src="player.js"></script>
+  <script src="enemy.js"></script>
+  <script src="bullet.js"></script>
+  <script src="xpOrb.js"></script>
+  <script src="snakeSegment.js"></script>
+  <script src="snake.js"></script>
+  
+  <script src="utils.js"></script> 
+  
+  <script src="sketch.js"></script>
+ <script>
+    window.addEventListener('error', (ev) => {
+      const msg = `${ev.message} at ${ev.filename}:${ev.lineno}:${ev.colno}`;
+      console.error('Uncaught error:', msg);
+      const box = document.createElement('pre');
+      box.style.cssText = 'position:fixed;bottom:8px;left:8px;right:8px;max-height:30vh;overflow:auto;padding:8px;background:#220;color:#f88;z-index:9999;border-radius:4px;font-family:monospace;font-size:12px';
+      box.textContent = 'Uncaught error:\n' + msg + '\n' + (ev.error && ev.error.stack ? ev.error.stack : '');
+      document.body.appendChild(box);
+    });
+  </script>
+</body>
+</html>
